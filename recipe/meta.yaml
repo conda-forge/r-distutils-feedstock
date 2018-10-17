@@ -8,13 +8,14 @@ package:
 
 source:
   url: https://github.com/Albluca/distutils/archive/cd82bcac0aa919261813a542f2e4a4939eeecace.zip
-  #url: https://github.com/simplejson/{{ name }}/archive/{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
   number: 1
-  # r-distutils seems to support only POSIX OS
   skip: true  # [win]
+  rpaths:
+    - lib/R/lib/
+    - lib/
 
 requirements:
   build:
