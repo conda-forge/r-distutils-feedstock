@@ -25,6 +25,7 @@ requirements:
     - r-rcpp >=0.12.12
     - r-rcpparmadillo >=0.7.960
   run:
+    - r-base
     - r-rcpp
     - r-rcpparmadillo
 
