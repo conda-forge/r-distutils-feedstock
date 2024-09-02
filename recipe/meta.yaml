@@ -10,27 +10,31 @@ source:
   sha256: 296464ab1a77a99761a80e46a30053ccbca4e75c42e127803ae54a6f7ba1408a
 
 build:
-  number: 1006
+  number: 1007
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
-    - cross-r-base {{ r_base }}  # [build_platform != target_platform]
-    - {{ compiler('c') }}        # [not win]
-    - {{ stdlib('c') }}          # [not win]
-    - {{ compiler('m2w64_c') }}  # [win]
-    - {{ stdlib('m2w64_c') }}    # [win]
-    - {{ posix }}filesystem      # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
+    - {{ compiler('c') }}          # [not win]
+    - {{ stdlib('c') }}            # [not win]
+    - {{ compiler('m2w64_c') }}    # [win]
+    - {{ stdlib('m2w64_c') }}      # [win]
+    - {{ compiler('cxx') }}        # [not win]
+    - {{ compiler('m2w64_cxx') }}  # [win]
+    - {{ posix }}filesystem        # [win]
     - {{ posix }}make
-    - {{ posix }}sed             # [win]
-    - {{ posix }}coreutils       # [win]
-    - {{ posix }}zip             # [win]
+    - {{ posix }}sed               # [win]
+    - {{ posix }}coreutils         # [win]
+    - {{ posix }}zip               # [win]
   host:
     - r-base
     - r-rcpp >=0.12.12
     - r-rcpparmadillo >=0.7.960
+    - libblas
+    - liblapack
   run:
     - r-base
     - r-rcpp >=0.12.12
@@ -53,6 +57,4 @@ about:
 extra:
   recipe-maintainers:
     - conda-forge/r
-    - dpryan79
-    - johanneskoester
     - lucapinello
