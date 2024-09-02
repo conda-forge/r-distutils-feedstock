@@ -201,7 +201,5 @@ Feedstock Maintainers
 =====================
 
 * [@conda-forge/r](https://github.com/orgs/conda-forge/teams/r/)
-* [@dpryan79](https://github.com/dpryan79/)
-* [@johanneskoester](https://github.com/johanneskoester/)
 * [@lucapinello](https://github.com/lucapinello/)
 
